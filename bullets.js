@@ -34,5 +34,14 @@ move(){
 	
 	
 }	
+
+hits(rock){
+	if(rock.position.y > this.position.y ){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
 	
 }

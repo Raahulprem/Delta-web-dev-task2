@@ -32,7 +32,7 @@ class canon{
 	}
 	
 		
-	move(deltaTime) {
+	move() {
     this.position.x += this.speed;
 
     if (this.position.x < 400) this.position.x =400;

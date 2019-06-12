@@ -11,19 +11,9 @@ var i = 0;
 
 
 let shooter = new canon();
-//let rock = new rocks();
 
-function put(){
-	var rock = new rocks();
-		  rocke.push(rock);
-	
-	 
 
-	for (var i = 0; i < rocke.length; i++){  
-  rocke[i].show(ctx);
-	rocke[i].move();}
-		 
-}
+
 
 
 
@@ -61,28 +51,41 @@ shooter.draw(ctx);
 for (var i = 0; i < bullet.length; i++){  
   bullet[i].show(ctx);
   bullet[i].move();
-  }
+  for(var k = 0;k<rocke.length;k++){
+	if(bullet[i].hits(rocke[k])){
+		console.log("10");
+		bullet.splice(i,1);
+		rocke[k].shrink();
+		
+	}
+	}
+  
+}
 
  
-    if(j == 100){
-		 var rock = new rocks();
-		  rocke.push(rock);
+    for(var i = 0; i < rocke.length; i++){
+		 
+	rocke[i].show(ctx);
+	rocke[i].move();
+	
 	
 	 
-
-	
-  rocke[i].show(ctx);
-	rocke[i].move();
-	i++;
 	}
- 
-
+//console.log(j);
+if(j%1000 == 0){
+	var rock = new rocks();
+		  rocke.push(rock);
+	    }
  
 j++;
 requestAnimationFrame(gameLoop);
 }
-requestAnimationFrame(gameLoop);
 
+
+document.addEventListener("keydown", event => {
+	if(event.keyCode == 32){
+requestAnimationFrame(gameLoop);
+}});
 
 /*
 
