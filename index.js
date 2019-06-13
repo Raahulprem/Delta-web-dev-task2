@@ -41,7 +41,7 @@ shooter.move(/* deltaTime */);
 shooter.draw(ctx);
   
   
-  if(shooter.a==37||shooter.a==39){
+  if(shooter.a==32/*||shooter.a==39*/){
   var bulle = new bullets(shooter.position.x);
 		  bullet.push(bulle);
   }  
