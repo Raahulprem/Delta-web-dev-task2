@@ -4,7 +4,7 @@ class bullets {
 		 this.width = 10;
     this.height = 10;
 
-	
+	this.gone = false;
     this.speed = 10;
 		
 	this.position =	{
@@ -12,6 +12,10 @@ class bullets {
 		y : 635,
 	}
 	}
+	
+vanish(){
+	this.gone = true;
+}	
 	
 show(ctx){
 	ctx.fillStyle = "blue";
@@ -36,7 +40,7 @@ move(){
 }	
 
 hits(rock){
-	if(rock.position.y > this.position.y ){
+	if(rock.position.y + rock.height/2 > this.position.y && rock.position.x < this.position.x && rock.position.x +rock.width > this.position.x ){
 		return true;
 	}
 	else{

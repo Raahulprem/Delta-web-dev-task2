@@ -8,12 +8,12 @@ var bullet = [];
 var rocke = [];
 var j = 0;
 var i = 0;
-
-
+var r = 0;
+var hScore = localStorage.getItem("highScore");
 let shooter = new canon();
+let gdisplay = new display();
 
-
-
+gdisplay.front();
 
 
 
@@ -32,13 +32,10 @@ ctx.clearRect(0, 0, gw, gh)
   lastTime = timestamp;*/
   
 
+gdisplay.inter();
 
 
-ctx.fillStyle = "black";
-ctx.fillRect(0,0,gw,gh);
-ctx.fillStyle = "white";
-ctx.fillRect(400,0,gw-800,gh);
-
+ 
 
 shooter.move(/* deltaTime */);
 shooter.draw(ctx);
@@ -54,23 +51,35 @@ for (var i = 0; i < bullet.length; i++){
   for(var k = 0;k<rocke.length;k++){
 	if(bullet[i].hits(rocke[k])){
 		console.log("10");
-		bullet.splice(i,1);
+		bullet[i].vanish();
 		rocke[k].shrink();
 		
+		r++;
 	}
 	}
-  
+  if(bullet[i].position.y < 10){
+	  bullet.splice(i,1);
+  }
 }
-
+for (var i = bullet.length-1; i >= 0; i--){
+	if(bullet[i].gone){
+		bullet.splice(i,1);
+	}
+	}
  
     for(var i = 0; i < rocke.length; i++){
 		 
 	rocke[i].show(ctx);
 	rocke[i].move();
-	
-	
-	 
+	if(rocke[i].dash(shooter)){
+	console.log("dashing");
+	var g = (localStorage.getItem("highScore"));
+	//localStorage.setItem("highScore",r);
+	if (r> g){
+    localStorage.setItem("highScore",r);}	
+	//location.reload();
 	}
+	   }
 //console.log(j);
 if(j%1000 == 0){
 	var rock = new rocks();

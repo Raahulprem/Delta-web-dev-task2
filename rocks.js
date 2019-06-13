@@ -30,8 +30,8 @@ class rocks{
       this.speed.x = -this.speed.x;
     }
 
-    // wall on top
-    if (this.position.y < 0 || this.position.y > 600) {
+    
+    if (this.position.y < 0 || this.position.y > 700-this.height) {
       this.speed.y = -this.speed.y;
     }
 	
@@ -43,4 +43,12 @@ class rocks{
 		this.height-=2;
 	}
 	
+	
+	dash(shooter){
+		 var h = this.position.x + this.width/2 - shooter.position.x - shooter.width/2;
+		 h= Math.abs(h);
+		if( shooter.position.y < this.position.y+this.height &&   h < this.width/2 + shooter.width/2  ){return true;}
+		//else if (shooter.position.y < this.position.y+this.height && shooter.position.x +shooter.width<=this.position.x+this.width){return true;}
+		else{return false;}
+	}
 }
