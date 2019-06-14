@@ -54,9 +54,15 @@ border-radius:10px;
 }
 }
 
+.instruct{
+	font-family: 'Permanent Marker', cursive;
+	font-size: 2rem;
+	
+}
+
 #start{
 	position:absolute;
-	top:70%;
+	top:90%;
 	left:45%;
 	height:1.5em;
 	width:3em;

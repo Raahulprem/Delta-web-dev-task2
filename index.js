@@ -13,6 +13,7 @@ var hScore = localStorage.getItem("highScore");
 let shooter = new canon();
 let gdisplay = new display();
 var k = 0;
+var w = 1000;
 gdisplay.front();
 
 
@@ -32,7 +33,7 @@ ctx.clearRect(0, 0, gw, gh)
 
 gdisplay.inter();
 
-
+console.log(w);
  
 
 shooter.move();
@@ -75,6 +76,7 @@ for (var i = bullet.length-1; i >= 0; i--){
 		 
 	rocke[i].show(ctx);
 	rocke[i].move();
+	
 	if(rocke[i].dash(shooter)){
 	console.log("dashing");
 	var g = (localStorage.getItem("highScore"));
@@ -83,9 +85,12 @@ for (var i = bullet.length-1; i >= 0; i--){
     localStorage.setItem("highScore",r);}	
 	location.reload();
 	}
+	
 	   }
-//console.log(j);
-if(j%1000 == 0){
+	  
+ 	  
+//console.log(r);
+if(j%w == 0){
 	var rock = new rocks();
 		  rocke.push(rock);
 	    }
@@ -105,5 +110,11 @@ requestAnimationFrame(gameLoop);
 remove the if statement if i want to shoot conyinuosly from starting game
 or later try changing to space for shhoting
 value of space is --'32'
+
+
+if (r%10==0){rocke[i].level*2;} 
+*ctx.font = "20px Comic Sans MS";
+ctx.fillStyle = "red";
+ctx.fillText( rocke[i].size, rocke[i].position.x, rocke[i].position.y);= use this if the game needs score based on size..and not all rocks of same size...
 
 */

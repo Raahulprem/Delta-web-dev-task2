@@ -5,11 +5,12 @@ class rocks{
 		this.height = 100;
 		this.variation = (Math.random()*10+1);
 		this.variation1 = (Math.random()*10+1);
+		//this.level = 10;
 		this.speed = {
 			x : this.variation,
 			y : this.variation1,
 		}
-		
+		//this.size = Math.floor((Math.random()*100+1));
 		this.position = {
 			x : 400,
 			y : 0,
@@ -42,6 +43,7 @@ class rocks{
 	shrink(){
 		this.width-=1;
 		this.height-=1;
+		//this.size -=1;
 	}
 	
 	
