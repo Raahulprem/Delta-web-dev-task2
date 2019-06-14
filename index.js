@@ -94,7 +94,7 @@ if(j%w == 0){
 	var rock = new rocks();
 		  rocke.push(rock);
 	    }
- 
+ if (r%100==0 && r!=0 && w>100){w-=50;}
 j++;
 requestAnimationFrame(gameLoop);
 }
