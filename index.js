@@ -12,7 +12,7 @@ var r = 0;
 var hScore = localStorage.getItem("highScore");
 let shooter = new canon();
 let gdisplay = new display();
-
+var k = 0;
 gdisplay.front();
 
 
@@ -28,8 +28,6 @@ ctx.clearRect(0, 0, gw, gh)
 
 
 
-/*let deltaTime = timestamp - lastTime;
-  lastTime = timestamp;*/
   
 
 gdisplay.inter();
@@ -37,7 +35,7 @@ gdisplay.inter();
 
  
 
-shooter.move(/* deltaTime */);
+shooter.move();
 shooter.draw(ctx);
   
   
@@ -67,6 +65,12 @@ for (var i = bullet.length-1; i >= 0; i--){
 	}
 	}
  
+ for (var i = rocke.length-1; i >= 0; i--){
+	if(rocke[i].width < 20){
+		rocke.splice(i,1);
+	}
+	}
+ 
     for(var i = 0; i < rocke.length; i++){
 		 
 	rocke[i].show(ctx);
@@ -74,10 +78,10 @@ for (var i = bullet.length-1; i >= 0; i--){
 	if(rocke[i].dash(shooter)){
 	console.log("dashing");
 	var g = (localStorage.getItem("highScore"));
-	//localStorage.setItem("highScore",r);
+	
 	if (r> g){
     localStorage.setItem("highScore",r);}	
-	//location.reload();
+	location.reload();
 	}
 	   }
 //console.log(j);

@@ -13,11 +13,11 @@ ctx.fillText("press space to start the game", gw/2-680, gh/2);
 	
 	inter(){
 
-
+var bg = document.getElementById("bg");
 ctx.fillStyle = "black";
 ctx.fillRect(0,0,gw,gh);
-ctx.fillStyle = "white";
-ctx.fillRect(400,0,gw-800,gh);
+//ctx.fillStyle = "white";
+ctx.drawImage(bg,400,0,gw-800,gh);
 
 ctx.font = "80px Comic Sans MS";
 ctx.fillStyle = "red";

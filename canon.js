@@ -3,15 +3,16 @@ class canon{
 	
     this.width = 50;
     this.height = 50;
-
 	this.maxSpeed = 7;
     this.speed = 0;
 	this.a = 0;	
 	this.position =	{
 		x : 725,
-		y : 650,
+		y : 630,
 	}
 	}
+	
+	
 	
 	 moveLeft() {
     this.speed = -this.maxSpeed;
@@ -27,8 +28,9 @@ class canon{
   
   
 	draw(ctx){
-		ctx.fillStyle = "red";
-		ctx.fillRect(this.position.x,this.position.y,this.width,this.height);
+		var pic = document.getElementById("shooter");
+		//ctx.fillStyle = "red";
+		ctx.drawImage(pic,this.position.x,this.position.y,this.width,this.height);
 	}
 	
 		

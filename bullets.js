@@ -18,8 +18,9 @@ vanish(){
 }	
 	
 show(ctx){
-	ctx.fillStyle = "blue";
-	ctx.fillRect(this.position.x,this.position.y,this.width,this.height);
+	var bullet = document.getElementById("bullet");
+	//ctx.fillStyle = "blue";
+	ctx.drawImage(bullet,this.position.x,this.position.y,this.width,this.height);
 }	
 /*moveLeft() {
     this.speed = -this.maxSpeed;

@@ -3,10 +3,11 @@ class rocks{
 	constructor(){
 		this.width = 100;
 		this.height = 100;
-		
+		this.variation = (Math.random()*10+1);
+		this.variation1 = (Math.random()*10+1);
 		this.speed = {
-			x : 1,
-			y : 2,
+			x : this.variation,
+			y : this.variation1,
 		}
 		
 		this.position = {
@@ -16,9 +17,9 @@ class rocks{
 	}
 	
 	show(ctx){
-		
-		ctx.fillStyle = "yellow";
-		ctx.fillRect(  this.position.x, this.position.y, this.width, this.height);
+		var rock = document.getElementById("bar");
+		//ctx.fillStyle = "yellow";
+		ctx.drawImage(rock,  this.position.x, this.position.y, this.width, this.height);
 	}
 	
 	move(){
@@ -31,7 +32,7 @@ class rocks{
     }
 
     
-    if (this.position.y < 0 || this.position.y > 700-this.height) {
+    if (this.position.y < 0 || this.position.y > 680-this.height) {
       this.speed.y = -this.speed.y;
     }
 	
@@ -39,8 +40,8 @@ class rocks{
 	}
 	
 	shrink(){
-		this.width-=2;
-		this.height-=2;
+		this.width-=1;
+		this.height-=1;
 	}
 	
 	
