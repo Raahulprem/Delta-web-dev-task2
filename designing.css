@@ -1,0 +1,68 @@
+/*font-family: 'East Sea Dokdo', cursive;
+font-family: 'Fjalla One', sans-serif;
+font-family: 'Great Vibes', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Lobster', cursive;
+font-family: 'Pacifico', cursive;
+font-family: 'Permanent Marker', cursive;
+font-family: 'ZCOOL KuaiLe', cursive;
+font-family: 'VT323', monospace;*/
+
+/*font-family: 'Bungee Shade', cursive;
+font-family: 'Ewert', cursive;
+font-family: 'Fruktur', cursive;
+font-family: 'Monoton', cursive;
+font-family: 'Black Ops One', cursive;
+font-family: 'Creepster', cursive;
+*/
+
+
+.heading{
+	font-family: 'Bungee Shade', cursive;
+	font-size:3em;
+	color:Chocolate;
+	text-align:center;
+}
+.tittle{
+	position:absolute;
+	top:0px;left:0px;right:0px; 
+}
+body{
+	background-color:SpringGreen;
+}
+
+h6{
+	font-family: 'Lobster', cursive;
+	font-size:1.2em;
+	text-align:center;
+	position:absolute;
+	top:15%;
+	left:40%;
+	color:Navy;
+	
+}
+@media(min-width:500px){
+#playArea{
+	display:block;
+	margin:5rem 0rem 20rem 15rem;
+	/*display:flex;
+	justify-content:center;
+	align-items:center;
+*/
+box-shadow:5px 5px DarkSeaGreen;
+border-radius:10px;
+}
+}
+
+#start{
+	position:absolute;
+	top:70%;
+	left:45%;
+	height:1.5em;
+	width:3em;
+	box-shadow:5px 5px Olive;
+	font-size:3.5em;
+	background-color:Chocolate;
+    border-radius:10px;
+	color:Yellow;
+}
